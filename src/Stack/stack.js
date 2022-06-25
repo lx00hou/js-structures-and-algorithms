@@ -22,3 +22,17 @@ export class Stack{
     }
 
 }
+
+
+export function system(num){    // 传入十进制 返回二进制 
+    let stack = new Stack()
+
+    // 循环 (不能确定 循环次数时  推荐使用 while() )
+    while(num > 0){
+        let remainder = num % 2;
+        num = Math.floor(num / 2);
+        stack.myPush(remainder)
+    } 
+
+    return stack.items.reverse().join('')
+}
