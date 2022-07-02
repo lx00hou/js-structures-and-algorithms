@@ -1,3 +1,6 @@
+// 栈 --> 后进先出 / 先进后出
+
+
 export class Stack{
     constructor(){
         this.items = []
