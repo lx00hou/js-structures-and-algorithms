@@ -26,6 +26,40 @@ export  class Queue {
     }
 
 } 
+export class QueneElement{
+    constructor(element,priority){
+        this.element = element;
+        this.priority = priority;
+    }
+}
+
+export class PriorityQueue extends Queue{    // 优先级队列 
+    enqueue(ele,priority){
+        //  创建 eleQueue 元素 
+        let eleQueue = new QueneElement(ele,priority);
+        //  开始执行插入 
+        if(!this.isEmpty()){   // 加入队列中没有 数据项 直接进行插入操作
+            this.items.push(eleQueue);
+        }else {
+            let added = false;
+            for (let i = 0; i < this.items.length; i++) {
+                if(this.items[i].priority > eleQueue.priority){
+                    // 执行插入操作 并跳出循环
+                    this.items.splice(i,0,eleQueue);
+                    added = true;
+                    break
+                }
+            }
+            if(!added) {
+                this.items.push(eleQueue)
+            }
+
+        }
+
+    }
+
+}
+
 /** 
  *  数据依次循环 当有数据下标+1 等于 num 时 则删除该数据 , 然后继续执行 直到 只剩下 最后一个元素
  */
