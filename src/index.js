@@ -1,1 +1,1 @@
-require('./Queus')
+require('./Linked_list')
