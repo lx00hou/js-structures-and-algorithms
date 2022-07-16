@@ -53,8 +53,41 @@ export class Linkedlist {
         newNode.next = current;    // 将新元素 指向 原本该位置上的元素
 
       }
-
       this.length++
+  }
+
+
+  get(position){    // 传入 位置  获得链表中 对应位置的 元素
+    if(position < 0 || position > this.length -1) return null
+
+    let index = 0;
+    let current = this.head;
+    while(index ++ < position){
+      current = current.next   // 顺序查找
+    }
+    console.log(current.element);
+    return current.element   //返回  指定位置 元素
+  }
+
+  indexOf(element){   // 传入元素 获得 对应链表中的 元素 所在位置
+    let current = this.head;
+    let index = 0 ;
+     
+    while(current){
+      if(current.element === element){
+        return index
+      }
+      index ++ ;
+      current = current.next
+    }
+
+    return -1
 
   }
+
+  update(index){   // 传入下标值  更新某个位置的元素
+    if(index < 0 || index > this.length) return null
+  }
+
+
 }

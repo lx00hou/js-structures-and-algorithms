@@ -10,6 +10,7 @@ linkedList.append('eee');
 
 linkedList.insert(1,'abc')
 linkedList.insert(3,'cbd')
+linkedList.get(4)
 
 console.log('linkedList',linkedList);
 
